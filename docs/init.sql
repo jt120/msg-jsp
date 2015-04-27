@@ -4,11 +4,14 @@ USE msg;
 CREATE TABLE t_user (
   id          INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   username    VARCHAR(100)     NOT NULL,
+  email VARCHAR(100)     NOT NULL,
   password    VARCHAR(100)     NOT NULL,
   nickname    VARCHAR(100)     NOT NULL,
   status      TINYINT UNSIGNED NOT NULL,
   type        TINYINT UNSIGNED NOT NULL,
   create_time TIMESTAMP        NOT NULL,
+  unique KEY username_idx (username),
+  UNIQUE KEY email_idx (email),
   KEY create_time_idx (create_time)
 )
   ENGINE = INNODB
