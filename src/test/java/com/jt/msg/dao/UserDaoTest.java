@@ -1,6 +1,9 @@
 package com.jt.msg.dao;
 
+import com.jt.msg.bean.Pager;
+import com.jt.msg.bean.SystemContext;
 import com.jt.msg.bean.User;
+import com.jt.msg.utils.EncryptUtil;
 import org.junit.Test;
 
 import java.util.Date;
@@ -17,14 +20,19 @@ public class UserDaoTest {
 
     private User user() {
         User u = new User();
-        u.setUsername("admin");
-        u.setPassword("admin");
-        u.setNickname("admin");
-        u.setEmail("hello@163.com");
+        u.setUsername("b");
+        u.setPassword(EncryptUtil.md5("b"));
+        u.setNickname("b");
+        u.setEmail("b@163.com");
         u.setType(1);
         u.setStatus(1);
         u.setCreateTime(new Date());
         return u;
+    }
+
+    @Test
+    public void testAdmin() throws Exception {
+        userDao.add(user());
     }
 
 
@@ -63,6 +71,14 @@ public class UserDaoTest {
         User u2 = user();
         assertEquals(user1, u2);
 
+    }
+
+    @Test
+    public void testPage() throws Exception {
+        SystemContext.setPageIndex(1);
+        SystemContext.setPageSize(5);
+        Pager<User> list = userDao.list();
+        System.out.println(list.getData());
     }
 
 }

@@ -23,9 +23,22 @@
     </filter>
     <filter-mapping>
         <filter-name>AdminFilter</filter-name>
-        <url-pattern>/admin/*</url-pattern>
+        <url-pattern>/jsp/admin/*</url-pattern>
     </filter-mapping>
 
+
+    <filter>
+        <filter-name>SystemContextFilter</filter-name>
+        <filter-class>com.jt.msg.filter.SystemContextFilter</filter-class>
+        <init-param>
+            <param-name>pageSize</param-name>
+            <param-value>3</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>SystemContextFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>

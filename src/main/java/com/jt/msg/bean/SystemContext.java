@@ -23,4 +23,12 @@ public class SystemContext {
     public static void setPageSize(int _pageSize) {
         pageSize.set(_pageSize);
     }
+
+    public static void removePageIndex() {
+        pageIndex.remove();
+    }
+
+    public static void removePageSize() {
+        pageSize.remove();
+    }
 }

@@ -19,4 +19,6 @@ public interface IUserDao {
 
     Pager<User> list();
 
+    User login(String username, String password);
+
 }

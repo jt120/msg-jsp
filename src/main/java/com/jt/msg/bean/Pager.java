@@ -9,6 +9,8 @@ public class Pager<E> {
 
     private int pageIndex;
 
+    private int pageOffset;
+
     private int pageSize;
 
     private int totalPages;
@@ -16,6 +18,14 @@ public class Pager<E> {
     private int totalRecords;
 
     List<E> data;
+
+    public int getPageOffset() {
+        return pageOffset;
+    }
+
+    public void setPageOffset(int pageOffset) {
+        this.pageOffset = pageOffset;
+    }
 
     public int getTotalPages() {
         return totalPages;
