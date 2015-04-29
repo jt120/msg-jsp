@@ -11,7 +11,7 @@
     if (luser.getType() != 1) {
         ValidateUtil.addError("admin", "没有权限", request);
         %>
-<jsp:forward page="list.jsp"></jsp:forward>
+<jsp:forward page="../user/list.jsp"></jsp:forward>
 <%
     }
 %>

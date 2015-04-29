@@ -3,8 +3,8 @@
   Time: 14:06
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="checkAuth.jsp" %>
-<%@include file="checkAdmin.jsp" %>
+<%@include file="../filter/checkAuth.jsp" %>
+<%@include file="../filter/checkAdmin.jsp" %>
 
 <%
     if (user.getType() == 0) {

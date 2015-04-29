@@ -22,7 +22,7 @@
     if (user.getUsername().equals("admin")) {
         ValidateUtil.addError("admin", "admin不能被修改", request);
 %>
-<jsp:forward page="list.jsp"></jsp:forward>
+<jsp:forward page="../user/list.jsp"></jsp:forward>
 <%
     }
 %>

@@ -105,13 +105,14 @@ public class UserDao implements IUserDao {
         ResultSet rs = null;
         String sql = "select id, username, password, nickname, email, status, type, create_time createTime " +
                 "from t_user where id=?";
-        User user = new User();
+        User user = null;
         try {
             conn = DbUtils.getConn();
             pst = conn.prepareStatement(sql);
             pst.setInt(1, id);
             rs = pst.executeQuery();
             if (rs.next()) {
+                user = new User();
                 user.setId(rs.getInt(1));
                 user.setUsername(rs.getString(2));
                 user.setPassword(rs.getString(3));
@@ -157,8 +158,9 @@ public class UserDao implements IUserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            DbUtils.close(conn);
+            DbUtils.close(rs);
             DbUtils.close(pst);
+            DbUtils.close(conn);
         }
         return user;
     }
@@ -212,8 +214,9 @@ public class UserDao implements IUserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            DbUtils.close(conn);
+            DbUtils.close(rs);
             DbUtils.close(pst);
+            DbUtils.close(conn);
         }
         return pager;
     }

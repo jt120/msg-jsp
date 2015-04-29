@@ -99,7 +99,7 @@
     <p>
         <%
             for (int i = 1; i <= list.getTotalPages(); i++) {
-                if (list.getPageIndex() == i-1) {
+                if (list.getPageIndex() == i) {
                     out.print(i);
                 } else {
         %>

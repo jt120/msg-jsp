@@ -9,7 +9,8 @@
         User u = (User) session.getAttribute("loginUser");
         if (u != null) {
     %>
-    欢迎 <%=u.getUsername()%> &nbsp;<a href="<%=request.getContextPath()%>/admin/msg/list.jsp">文章列表</a>
+    欢迎 <%=u.getUsername()%> &nbsp;<a href="<%=request.getContextPath()%>/jsp/admin/msg/list.jsp">文章列表</a>
+    &nbsp;<a href="<%=request.getContextPath()%>/jsp/admin/msg/addInput.jsp">发表文章</a>
     <%
         if (u.getType() == 1) {
     %>

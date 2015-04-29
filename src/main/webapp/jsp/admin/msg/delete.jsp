@@ -3,8 +3,8 @@
   Time: 15:05
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../filter/checkAuth.jsp"%>
-<%@include file="../filter/checkAdmin.jsp" %>
+<%@include file="checkAuth.jsp"%>
+<%@include file="checkAdmin.jsp" %>
 
 <%
     int id = Integer.parseInt(request.getParameter("id"));
