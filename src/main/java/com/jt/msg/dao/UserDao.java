@@ -26,6 +26,8 @@ public class UserDao implements IUserDao {
 
     @Override
     public int add(User user) {
+        //    int count = stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
+        //rs = stmt.getGeneratedKeys();
         User u = fetchByUsername(user.getUsername());
         log.info("add user {}", user);
         if (u != null) {

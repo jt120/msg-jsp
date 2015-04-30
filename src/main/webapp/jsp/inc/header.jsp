@@ -9,7 +9,7 @@
         User u = (User) session.getAttribute("loginUser");
         if (u != null) {
     %>
-    欢迎 <%=u.getUsername()%> &nbsp;<a href="<%=request.getContextPath()%>/jsp/admin/msg/list.jsp">文章列表</a>
+    欢迎 <%=u.getUsername()%> &nbsp;<a href="<%=request.getContextPath()%>/list.jsp">主页</a>
     &nbsp;<a href="<%=request.getContextPath()%>/jsp/admin/msg/addInput.jsp">发表文章</a>
     <%
         if (u.getType() == 1) {
@@ -17,7 +17,7 @@
     <a href="<%=request.getContextPath()%>/jsp/admin/user/addInput.jsp">添加用户</a>
     <%
         }%>
-    <a href="<%=request.getContextPath()%>/logout.jsp">退出</a>
+    <a href="<%=request.getContextPath()%>/logout.jsp">退出登陆</a>
     <%
     } else {
 

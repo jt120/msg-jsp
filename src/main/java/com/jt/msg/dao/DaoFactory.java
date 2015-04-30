@@ -12,4 +12,8 @@ public final class DaoFactory {
     public static IMsgDao msgDao() {
         return new MsgDao();
     }
+
+    public static ICommentDao commentDao() {
+        return new CommentDao();
+    }
 }

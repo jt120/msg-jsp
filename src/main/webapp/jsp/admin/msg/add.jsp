@@ -8,7 +8,6 @@
   Time: 11:37
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/jsp/admin/filter/checkLogin.jsp" %>
 <%@include file="/jsp/util/buildMsg.jsp"%>
 <%
     if (!ValidateUtil.notNull(new String[]{"title", "content"}, request)) {
